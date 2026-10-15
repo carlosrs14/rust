@@ -13,3 +13,8 @@
 2. [Even or Odd](even-odd/src/main.rs)
 3. [Bigger of three](bigger-of-three/src/main.rs)
 4. [If as Expresion](if-as-expresion/src/main.rs)
+5. [Using match](using-match/src/main.rs)
+
+# Cycles:
+
+1. [Using loop](using-loop/src/main.rs)
