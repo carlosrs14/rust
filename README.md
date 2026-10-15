@@ -16,5 +16,5 @@
 5. [Using match](using-match/src/main.rs)
 
 # Cycles:
-
 1. [Using loop](using-loop/src/main.rs)
+2. [Using while](using-while/src/main.rs)
