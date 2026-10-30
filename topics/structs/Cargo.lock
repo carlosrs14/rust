@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "section-7-udemy"
+name = "structs"
 version = "0.1.0"
