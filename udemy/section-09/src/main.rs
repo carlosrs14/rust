@@ -33,6 +33,62 @@ new Strings for the remaining fields to ensure ownership
 doesn't transfer. Assign the new Flight to a separate variable.
 */
 
+#[derive(Debug)]
+struct Flight {
+    origin: String,
+    destination: String,
+    price: f64,
+    passengers: i32
+}
+
+impl Flight {
+    fn new(origin: String, destination: String, price: f64, passengers: i32) -> Flight {
+        return Flight {
+            origin,
+            destination,
+            price,
+            passengers
+        };
+    }
+    
+    fn change_destination(&mut self, destination: String) {
+        self.destination = destination;
+    }
+
+    fn increase_price(&mut self) {
+        self.price = self.price * 1.2;
+    }
+
+    fn itinerary(&self) {
+        println!("({} -> {})", self.origin, self.destination);
+    }
+
+    fn copy(&self, origin: String, destination: String) -> Flight {
+        return  Flight {
+            origin,
+            destination,
+            .. *self
+        };
+    }
+}
+
 fn main() {
-    println!("Hello, world!");
+    let origin = String::from("origin");
+    let destination = String::from("destination");
+    let price = 4999.99;
+    let passengers = 50;
+
+    let mut flight = Flight::new(origin , destination, price, passengers);
+
+    println!("{:?}", flight);
+    flight.change_destination(String::from("another destination"));
+    flight.increase_price();
+
+    flight.itinerary();
+    println!("{:?}", flight);
+
+    let another_flight = flight.copy(String::from("origin copied"), String::from("destination copied"));
+
+    println!("{:?}", another_flight);
+    println!("{:?}", flight);
 }
