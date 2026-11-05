@@ -45,15 +45,10 @@ The final result should be:
 use std::collections::HashMap;
 
 fn main() {
-    let mut sauces_to_meal = HashMap::<String, Vec<String>>::from(
-        [(
-            String::from("Ketchup"), vec![String::from("French Fries"), String::from("Burgers"), String::from("Hot Dogs")]
-        ), (
-            String::from("Mayonnaise"), vec![String::from("Sandwiches"), String::from("Burgers"), String::from("Coleslaw")]
-        )]
-    );
-
-    
+    let mut sauces_to_meal = HashMap::<String, Vec<String>>::from([
+        (String::from("Ketchup"), vec![String::from("French Fries"), String::from("Burgers"), String::from("Hot Dogs")]), 
+        (String::from("Mayonnaise"), vec![String::from("Sandwiches"), String::from("Burgers"), String::from("Coleslaw")])
+    ]);
 
     sauces_to_meal.insert(
         String::from("Mustard"), 
@@ -71,7 +66,6 @@ fn main() {
 
     let data = (String::from("Soy Sauce"), vec![String::from("Sushi"), String::from("Dumplings")]);
     sauces_to_meal.entry(data.0).or_insert(data.1);
-
 
     println!("{:?}", sauces_to_meal);
 }
